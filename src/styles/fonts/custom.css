@@ -1,0 +1,65 @@
+@import 'https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400&family=Oswald:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700&display=swap';
+
+@font-face {
+  font-family: 'ABCArizonaFlareLight';
+  src: url(https://im8health.com/cdn/shop/files/ABCArizonaFlare-Light.woff);
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Aeonik';
+  src: url(https://cdn.shopify.com/s/files/1/0637/4460/6375/files/Aeonik-Bold.woff?v=1720189906);
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Aeonik';
+  src: url(https://im8health.com/cdn/shop/files/aeonik_regular-webfont.woff2?v=12460513505982210348);
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AeonikRegular';
+  src: url(https://im8health.com/cdn/shop/files/aeonik_regular-webfont.woff);
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'NB Architekt';
+  src: url(https://cdn.shopify.com/s/files/1/0637/4460/6375/files/nb_architekt_bold-webfont.woff?v=1720189839);
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins-Klaviyo-Hosted';
+  src: url(https://static.klaviyo.com/onsite/hosted-fonts/Poppins/latin/poppins_latin_italic_400.woff2);
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins-Klaviyo-Hosted';
+  src: url(https://static.klaviyo.com/onsite/hosted-fonts/Poppins/latin/poppins_latin_italic_700.woff2);
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins-Klaviyo-Hosted';
+  src: url(https://static.klaviyo.com/onsite/hosted-fonts/Poppins/latin/poppins_latin_regular_400_2.woff2);
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins-Klaviyo-Hosted';
+  src: url(https://static.klaviyo.com/onsite/hosted-fonts/Poppins/latin/poppins_latin_regular_700.woff2);
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

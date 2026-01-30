@@ -1,0 +1,39 @@
+@import 'tailwindcss';
+@import './fonts/architekt.css';
+@import './fonts/assistant.css';
+@import './fonts/aeonik.css';
+@import './fonts/GTStandard-M.css';
+
+:root {
+  /* VARIABLES */
+  --color-foreground: 80, 0, 11;
+
+  /* COLORS */
+  --primary-color: #a40011;
+  --primary-color-dark: #a52a2a;
+  --primary-color-darker: #50000b;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --link-color: rgba(var(--color-foreground), 0.75);
+
+  /* SIZING */
+  --page-width: 150rem;
+}
+
+@theme {
+  /* FONTS */
+  --font-architekt: 'NB Architekt', sans-serif;
+  --font-aeonik: 'Aeonik', sans-serif;
+}
+
+.page-width {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .page-width {
+    padding: 0 5rem;
+  }
+}
