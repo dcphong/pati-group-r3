@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import SaleAnnouncement from '@/components/header/SaleAnnouncement.vue'
 import LocalePicker from '@/components/header/LocalePicker.vue'
+import NavigationBase from '@/components/header/NavigationBase.vue'
 </script>
 
 <template>
@@ -11,5 +12,8 @@ import LocalePicker from '@/components/header/LocalePicker.vue'
       <sale-announcement />
       <locale-picker />
     </div>
+    <!-- NAVIGATION -->
+    <navigation-base />
+    <!-- END NAVIGATION -->
   </header>
 </template>

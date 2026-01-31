@@ -3,6 +3,16 @@
 @import './fonts/assistant.css';
 @import './fonts/aeonik.css';
 @import './fonts/GTStandard-M.css';
+@import './animations/index.css';
+
+body {
+  line-height: calc(1 + 0.8 / 1);
+  font-size: 1.5rem;
+  letter-spacing: 0;
+  font-family: 'Aeonik', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
 
 :root {
   /* VARIABLES */
@@ -24,6 +34,10 @@
   /* FONTS */
   --font-architekt: 'NB Architekt', sans-serif;
   --font-aeonik: 'Aeonik', sans-serif;
+  --font-arizona: 'ABC Arizona Flare', sans-serif;
+
+  --breakpoint-laptop: 990px;
+  --breakpoint-tablet: 750px;
 }
 
 .page-width {
@@ -33,7 +47,26 @@
 }
 
 @media screen and (min-width: 750px) {
+  body {
+    font-size: 1.6rem;
+  }
+
   .page-width {
     padding: 0 5rem;
   }
+}
+
+/* SCROLL BAR */
+.primary-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px !important;
+}
+
+.primary-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 0px;
+}
+
+.primary-scrollbar::-webkit-scrollbar-track {
+  background: rgba(143, 142, 142, 0.349);
 }

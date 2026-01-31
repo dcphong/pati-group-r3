@@ -7,10 +7,11 @@
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden="true"
+    color="currentColor"
   >
     <path
       d="M9 4.8125L5.625 8.1875L2.25 4.8125"
-      stroke="white"
+      stroke="currentColor"
       stroke-width="2"
       stroke-linecap="square"
     ></path>

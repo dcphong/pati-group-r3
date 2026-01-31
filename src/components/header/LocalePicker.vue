@@ -1,5 +1,8 @@
 <template>
-  <div class="absolute top-[6px] text-[14px] right-[100px] font-architekt font-bold">
+  <div
+    ref="dropdownRef"
+    class="absolute top-[6px] text-[14px] right-[100px] font-architekt font-bold"
+  >
     <button
       class="group cursor-pointer flex justify-end items-end relative"
       @click="handleOpenDropdown"
@@ -32,7 +35,7 @@
               for="search"
               class="absolute top-3 left-[2rem] text-base z-5 text-(--link-color) transition-all duration-200"
               :class="{
-                'text-2xl! top-5': !isFocused,
+                'text-2xl! top-5': !isFocused && !inputValue,
               }"
               >search</label
             >
@@ -42,12 +45,19 @@
               class="border border-(--link-color) pt-[2.2rem] pr-[1.5rem] pb-[.8rem] pl-[2rem] outline-(--primary-color-darker) outline-offset-3 rounded-none! text-(--primary-color-darker) min-w-full font-aeonik! font-[400] text-[1.6rem] h-[4.5rem]"
               @focus="isFocused = true"
               @blur="isFocused = false"
+              @input="handleInputChange"
+              :value="inputValue"
             />
             <search
-              class="text-black stroke-1 invisible absolute size-8 top-5 right-5"
-              :class="{
-                visible: !isFocused,
-              }"
+              v-if="!inputValue && !isFocused"
+              class="text-black stroke-1 absolute size-8 top-5 right-5"
+            />
+            <circle-x-custom
+              v-if="inputValue"
+              :size="16"
+              :outer-size="30"
+              class="absolute top-5 right-5 text-black"
+              @click="inputValue = ''"
             />
           </div>
         </div>
@@ -88,17 +98,39 @@
 <script setup lang="ts">
 import ChevronDownCustom from '@/components/icon/ChevronDownCustom.vue'
 import { Check, Search } from 'lucide-vue-next'
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+import CircleXCustom from '../icon/CircleXCustom.vue'
 const open = ref<boolean>(false)
 const currentCurrency = ref<string>('United States')
 const isFocused = ref<boolean>(false)
+const inputValue = ref<string>('')
+const dropdownRef = ref<HTMLElement | null>(null)
 
 const handleOpenDropdown = () => {
   open.value = !open.value
 }
+
+const handleClickOutside = (event: MouseEvent) => {
+  if (dropdownRef.value && !dropdownRef.value.contains(event.target as Node)) {
+    open.value = false
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleClickOutside)
+})
+
 const handleChangeCurrency = (currency: string) => {
   currentCurrency.value = currency
   open.value = false
+}
+const handleInputChange = (e: Event) => {
+  const target = e.target as HTMLInputElement
+  inputValue.value = target.value
 }
 
 const currencyCode = <Record<string, string>>{
