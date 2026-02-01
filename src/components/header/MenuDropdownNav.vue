@@ -77,7 +77,7 @@
           class="hover:ring-3 ring-(--primary-color) ring-0 transition-all rounded-[12px]"
         >
           <a
-            href="#"
+            :href="getURL"
             class="font-normal relative text-(--primary-color-darker) text-[30px] leading-[100%] tracking-[-.8px] font-arizona p-[5px_0] no-underline transition-all"
           >
             <img
@@ -93,6 +93,8 @@
 </template>
 
 <script setup lang="ts">
+import getURL from '@/utils'
+
 const images = [
   'https://im8health.com/cdn/shop/files/DUE-thumb.png?v=1762223928&width=600',
   'https://im8health.com/cdn/shop/files/DUL-thumb.png?v=1762223929&width=600',

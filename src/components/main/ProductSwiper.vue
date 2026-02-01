@@ -1,6 +1,6 @@
 <template>
-  <div class="flex mx-auto gap-6 h-[750px] sticky top-0">
-    <div class="relative min-w-24 flex flex-col h-full z-1">
+  <div class="flex mx-auto gap-6 min-h-[1px] max-h-[750px] sticky top-40">
+    <div class="relative min-w-24 flex flex-col z-1">
       <button
         v-show="!isBeginning"
         @click="swiperThumbs?.slidePrev()"
@@ -24,6 +24,12 @@
         :space-between="10"
         :allow-touch-move="false"
         :no-swiping="true"
+        :breakpoints="{
+          1140: {
+            slidesPerView: 8.2,
+            spaceBetween: 0,
+          },
+        }"
         class="h-full w-full"
         @swiper="onThumbsSwiper"
         @slideChange="onThumbsChange"
@@ -31,7 +37,7 @@
         <swiper-slide v-for="(img, idx) in images" :key="idx" class="cursor-pointer">
           <div
             @click="activeIndex = idx"
-            class="rounded-2xl overflow-hidden border transition-all h-[105px] w-[94px]"
+            class="rounded-2xl overflow-hidden border transition-all w-[70px] h-[80px] xl:h-[105px] xl:w-[94px]"
             :class="activeIndex === idx ? 'border-[#a40011]' : 'opacity-100 border-transparent'"
           >
             <img :src="img" class="w-full h-full object-cover" />
@@ -61,8 +67,8 @@
       </button>
     </div>
 
-    <div class="flex-1 rounded-3xl bg-white flex flex-col items-center justify-start">
-      <div class="size-[660px]">
+    <div class="flex-1 rounded-3xl bg-white flex flex-col items-center justify-start h-fit">
+      <div class="w-full max-w-full">
         <transition
           enter-active-class="transition-all duration-100 delay-100 ease-out "
           enter-from-class="opacity-0 -translate-y-2"
@@ -74,7 +80,7 @@
           <img
             :key="activeIndex"
             :src="images[activeIndex]"
-            class="absolute w-[660px] object-contain drop-shadow-2xl rounded-3xl overflow-hidden"
+            class="w-full h-full object-contain drop-shadow-2xl rounded-3xl overflow-hidden"
           />
         </transition>
       </div>
@@ -90,19 +96,22 @@ import 'swiper/css'
 
 const images = [
   'https://im8health.com/cdn/shop/files/PDP_060fbac6-1883-4c53-aae5-f791c68056a5.jpg?v=1766566335&width=823',
-  'https://im8health.com/cdn/shop/files/pdp_essentials-sachet_carousel01.jpg?v=1761040602&width=823',
-  'https://im8health.com/cdn/shop/files/pdp_essentials-sachet_carousel02.jpg?v=1761042620&width=823',
-  'https://im8health.com/cdn/shop/files/pdp_essentials-sachet_carousel03.jpg?v=1761040602&width=823',
+  'https://im8health.com/cdn/shop/files/pdp_essentials-jar_carousel02.jpg?v=1761040602&width=823',
+  'https://im8health.com/cdn/shop/files/pdp_essentials-jar_carousel03.jpg?v=1761040601&width=823',
+  // 'https://im8health.com/cdn/shop/files/pdp_essentials-sachet_carousel01.jpg?v=1761040602&width=823',
+  // 'https://im8health.com/cdn/shop/files/pdp_essentials-sachet_carousel02.jpg?v=1761042620&width=823',
+  // 'https://im8health.com/cdn/shop/files/pdp_essentials-sachet_carousel03.jpg?v=1761040602&width=823',
   'https://im8health.com/cdn/shop/files/pdp_essentials-sachet_carousel04.jpg?v=1761040602&width=823',
   'https://im8health.com/cdn/shop/files/pdp_essentials-sachet_carousel05.jpg?v=1761040601&width=823',
   'https://im8health.com/cdn/shop/files/pdp_essentials-sachet_carousel06.jpg?v=1761040602&width=823',
-  'https://im8health.com/cdn/shop/files/pdp_essentials-sachet_carousel07.jpg?v=1761040602&width=823',
-  'https://im8health.com/cdn/shop/files/pdp_essentials-jar_carousel02.jpg?v=1761040602&width=823',
-  'https://im8health.com/cdn/shop/files/pdp_essentials-jar_carousel03.jpg?v=1761040601&width=823',
-  'https://im8health.com/cdn/shop/files/pdp_essentials-jar_carousel04.jpg?v=1761040602&width=823',
-  'https://im8health.com/cdn/shop/files/pdp_essentials-jar_carousel05.jpg?v=1761040602&width=823',
-  'https://im8health.com/cdn/shop/files/pdp_essentials-jar_carousel06.jpg?v=1761040602&width=823',
   'https://im8health.com/cdn/shop/files/pdp_essentials-jar_carousel07.jpg?v=1761040602&width=823',
+  'https://im8health.com/cdn/shop/files/PDP_1f993d55-9054-40cb-b0b6-36961706db9b.webp?v=1769913343&width=823',
+  'https://im8health.com/cdn/shop/files/PDP_14ef8054-a625-458b-85d8-7f236bc8922a.webp?v=1769913002&width=823',
+  // 'https://im8health.com/cdn/shop/files/pdp_essentials-sachet_carousel07.jpg?v=1761040602&width=823',
+  // 'https://im8health.com/cdn/shop/files/pdp_essentials-jar_carousel04.jpg?v=1761040602&width=823',
+  // 'https://im8health.com/cdn/shop/files/pdp_essentials-jar_carousel05.jpg?v=1761040602&width=823',
+  // 'https://im8health.com/cdn/shop/files/pdp_essentials-jar_carousel06.jpg?v=1761040602&width=823',
+  // 'https://im8health.com/cdn/shop/files/pdp_essentials-jar_carousel07.jpg?v=1761040602&width=823',
 ]
 
 const activeIndex = ref(0)

@@ -4,6 +4,7 @@ import MenuDropdownNav from '@/components/header/MenuDropdownNav.vue'
 import DiscoverDropdownItems from '@/components/header/DiscoverDropdownItems.vue'
 import UserCustomIcon from '@/components/icon/UserCustomIcon.vue'
 import CartCustomIcon from '@/components/icon/CartCustomIcon.vue'
+import getURL from '@/utils'
 
 const routerPaths = ['Shop', 'Science', 'The Beckham Stack', 'Welcome from David']
 const rightNavItems = ['Reviews', 'Ingredients', 'Discover']
@@ -24,7 +25,7 @@ const rightNavItems = ['Reviews', 'Ingredients', 'Discover']
           }"
         >
           <a
-            href="#"
+            :href="getURL"
             :class="`peer/${index}`"
             class="flex items-center laptop:p-[21px_clamp(8px,1.2vw,20px)]! text-[clamp(13px,1vw,16px)]! whitespace-nowrap font-aeonik py-[21px] px-[20px] text-[16px] font-[500] leading-[22px] tracking-[0] no-underline text-(--primary-color-darker)"
           >
@@ -47,7 +48,7 @@ const rightNavItems = ['Reviews', 'Ingredients', 'Discover']
       </ul>
     </nav>
     <!-- LOGO -->
-    <a href="/" class="text-center p-0 p-[.75rem]">
+    <a :href="getURL" class="text-center p-0 p-[.75rem]">
       <div class="w-full ml-0 inline-block h-fit align-bottom">
         <img
           src="//im8health.com/cdn/shop/files/Header-Logo-New.svg?v=1729066833&amp;width=600"

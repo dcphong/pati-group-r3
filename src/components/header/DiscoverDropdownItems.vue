@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import getURL from '@/utils';
+
 const items = ['About Us', 'Our Impact', 'Quality and Standards', 'The Healthspan Blog']
 </script>
 
@@ -7,7 +9,7 @@ const items = ['About Us', 'Our Impact', 'Quality and Standards', 'The Healthspa
     <ul class="p-[3px_16px_6px_16px] w-full m-0 list-none block page-width space-y-[6px]">
       <li v-for="(item, index) in items" :key="index">
         <a
-          href="#"
+          :href="getURL"
           class="font-aeonik p-[6px_0] text-[16px] font-medium leading-[135%] tracking-[0] text-(--primary-color-darker) hover:underline hover:underline-offset-[5px] decoration-2"
         >
           <div>{{ item }}</div>
